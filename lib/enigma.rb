@@ -57,6 +57,13 @@ class Enigma
     offset4 = offset.to_a[3].to_i
   end
 
+  def shift
+
+    a = Array.new[split_number + create_offset]
+
+    require "pry"; binding.pry
+  end
+
 
 end
 
