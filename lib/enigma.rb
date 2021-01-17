@@ -1,3 +1,5 @@
+require 'time'
+
 class Enigma
     attr_reader
 
@@ -37,12 +39,27 @@ class Enigma
     number4 = number[3..4].to_i
   end
 
-  # def generate_date
-  #
-  #
-  # end
+  def generate_date
+    time = Time.new
+    date = time.strftime("%d%m%y").to_i
+  end
+
+  def squared_date
+    number = generate_date * generate_date
+    number.to_s[-4..-1].to_i
+  end
 end
   #
+
+
+
+#   Consider the date formatted as a number, DDMMYY. If the date is August 4, 1995, it would be represented as 040895.
+# Square the numeric form (1672401025)
+# Take the last four digits (1025)
+# A offset: The first digit (1)
+# B offset: The second digit (0)
+# C offset: The third digit (2)
+# D offset: The fourth digit (5)
   #   def ask(question)
   #       print question
   #       answer= gets.chomp
