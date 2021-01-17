@@ -51,4 +51,10 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
     assert_equal 1, enigma.create_offset.to_s.length
   end
+
+  def test_create_shift
+    enigma = Enigma.new
+    assert_equal 1, enigma.shift.to_s.length
+
+  end
 end
