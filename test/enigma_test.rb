@@ -32,7 +32,7 @@ class EnigmaTest < Minitest::Test
     assert_equal 5, enigma.generate_random_number.to_s.length
   end
 
-  def test__split_number
+  def test_split_number
     enigma = Enigma.new
     assert_equal 2, enigma.split_number.to_s.length
   end
@@ -45,6 +45,10 @@ class EnigmaTest < Minitest::Test
   def test_square_the_date_keep_last_four_numbers
     enigma = Enigma.new
     assert_equal 4, enigma.squared_date.to_s.length
+  end
 
+  def test_create_key
+    enigma = Enigma.new
+    assert_equal 1, enigma.create_offset.to_s.length
   end
 end
