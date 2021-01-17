@@ -33,10 +33,10 @@ class Enigma
 
   def split_number
     number  = generate_random_number
-    number1 = number[0..1].to_i
-    number2 = number[1..2].to_i
-    number3 = number[2..3].to_i
-    number4 = number[3..4].to_i
+    key1 = number[0..1].to_i
+    key2 = number[1..2].to_i
+    key3 = number[2..3].to_i
+    key4 = number[3..4].to_i
   end
 
   def generate_date
@@ -45,11 +45,21 @@ class Enigma
   end
 
   def squared_date
-    number = generate_date * generate_date
-    number.to_s[-4..-1].to_i
+    squared_number = generate_date * generate_date
+    squared_number.to_s[-4..-1].to_i
   end
+
+  def create_offset
+    offset  = squared_date.to_s.split('')
+    offset1 = offset.to_a[0].to_i
+    offset2 = offset.to_a[1].to_i
+    offset3 = offset.to_a[2].to_i
+    offset4 = offset.to_a[3].to_i
+  end
+
+
 end
-  #
+
 
 
 
