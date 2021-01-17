@@ -1,6 +1,7 @@
 require "./test/test_helper"
 require "./lib/enigma"
 
+
 class EnigmaTest < Minitest::Test
   def test_it_exists
     enigma = Enigma.new
@@ -34,5 +35,16 @@ class EnigmaTest < Minitest::Test
   def test__split_number
     enigma = Enigma.new
     assert_equal 2, enigma.split_number.to_s.length
+  end
+
+  def test_generate_date
+    enigma = Enigma.new
+    assert_equal 6, enigma.generate_date.to_s.length
+  end
+
+  def test_square_the_date_keep_last_four_numbers
+    enigma = Enigma.new
+    assert_equal 4, enigma.squared_date.to_s.length
+
   end
 end
