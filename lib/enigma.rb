@@ -19,9 +19,9 @@ class Enigma
       if !create_alphabet.include?(letter.downcase)
         return_message += letter
       else
-        old_index = create_alphabet.index(letter)
-        new_index = (old_index + shift + date) % 27
-        return_message += create_alphabet[new_index]
+        old_message = create_alphabet.index(letter)
+        new_message = (old_message + shift + date) % 27
+        return_message += create_alphabet[new_message]
       end
     end
     return_message
