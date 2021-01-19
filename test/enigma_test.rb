@@ -52,9 +52,8 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_create_shift
-    enigma = Enigma.new(7)
+    enigma = Enigma.new
     assert_equal 1, enigma.shift.to_s.length(7)
-    require "pry"; binding.pry
   end
 
   # def test_it_can_ask_for_message
