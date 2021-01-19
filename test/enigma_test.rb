@@ -15,7 +15,6 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_encrypt_simple_shift
-
     enigma = Enigma.new
     assert_equal "mjqqt", enigma.encrypt("hello", 5, 0)
     enigma1 = Enigma.new
@@ -51,4 +50,15 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
     assert_equal 1, enigma.create_offset.to_s.length
   end
+
+  def test_create_shift
+    enigma = Enigma.new
+    assert_equal 1, enigma.shift.to_s.length(7)
+  end
+
+  # def test_it_can_ask_for_message
+  #   skip
+  #   enigma = Enigma.new
+  #   assert_equal , enigma
+  # end
 end

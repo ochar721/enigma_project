@@ -1,12 +1,12 @@
 require 'time'
 
 class Enigma
-    attr_reader
+    # attr_reader :key
 
   def initialize
-      # @message         = message
-      # @random_number   = random_number
-      # # @date            = date
+      # @message = message
+      # @key     = key
+      # @date    = date
   end
 
   def create_alphabet
@@ -19,9 +19,9 @@ class Enigma
       if !create_alphabet.include?(letter.downcase)
         return_message += letter
       else
-        old_index = create_alphabet.index(letter)
-        new_index = (old_index + shift + date) % 27
-        return_message += create_alphabet[new_index]
+        old_message = create_alphabet.index(letter)
+        new_message = (old_message + shift + date) % 27
+        return_message += create_alphabet[new_message]
       end
     end
     return_message
@@ -33,10 +33,10 @@ class Enigma
 
   def split_number
     number  = generate_random_number
-    key1 = number[0..1].to_i
-    key2 = number[1..2].to_i
-    key3 = number[2..3].to_i
-    key4 = number[3..4].to_i
+    @key1 = number[0..1].to_i
+    @key2 = number[1..2].to_i
+    @key3 = number[2..3].to_i
+    @key4 = number[3..4].to_i
   end
 
   def generate_date
@@ -55,11 +55,24 @@ class Enigma
     offset2 = offset.to_a[1].to_i
     offset3 = offset.to_a[2].to_i
     offset4 = offset.to_a[3].to_i
+
   end
 
+  def shift(key)
 
+    a = split_number(@key1)
+
+
+  end
 end
 
+#   def ask(question)
+#       print question
+#       answer = gets.chomp
+#   answer = ask("What would you like to encrypt? ")
+# end
+#   puts encrypt(answer, 5)
+# end
 
 
 
@@ -70,10 +83,3 @@ end
 # B offset: The second digit (0)
 # C offset: The third digit (2)
 # D offset: The fourth digit (5)
-  #   def ask(question)
-  #       print question
-  #       answer= gets.chomp
-  #   end
-  # answer = ask("What would you like to encrypt? ")
-  # puts encrypt(answer, 5)
-  # end
